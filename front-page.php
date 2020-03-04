@@ -15,7 +15,7 @@
 
         //Utiliser ca pour afficher la description : term_description( $category );
         $args = array(
-            "category_name" => "conference",
+            "category_name" => "conferences",
             "posts_per_page"=> 5,
             "orderby"=>'date',
             'order' => 'ASC'
@@ -26,7 +26,7 @@
 
         /* The 2nd Query (without global var) */
         $args2 = array(
-            "category_name" => "nouvelle",
+            "category_name" => "nouvelles",
             'posts_per_page' => 4
         );
         $query2 = new WP_Query( $args2 );
@@ -36,7 +36,9 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main">
+    
 		<?php
         
 		while ( have_posts() ) :
@@ -58,7 +60,7 @@ get_header();
         while ( $query1->have_posts() ) {
             $query1->the_post();
             echo get_the_post_thumbnail('thumbnail');
-            echo '<h4>' . get_the_title() . '</h4>';
+            echo '<h4>' . get_the_title() .' - ' .get_the_date().  '</h4>';
             echo '<p>'.substr(get_the_excerpt(),0,200) .'</p>';
         }
         
@@ -75,7 +77,7 @@ get_header();
         while ( $query2->have_posts() ) {
         $query2->the_post();
         echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
-        echo '<p>'.get_the_excerpt() .'</p>';
+        // echo '<p>'.get_the_excerpt() .'</p>';
         echo get_the_post_thumbnail($post, "thumbnail");
     }
 

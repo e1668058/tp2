@@ -14,4 +14,8 @@
 .entry-content p:nth-child(1) {
   font-size: 3em;
 }
+
+.entry-footer {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
