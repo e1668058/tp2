@@ -11,7 +11,5 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  Underscores-enfant
 */
-.entry-content p:nth-child(1) {
-  font-size: 3em;
-}
-/*# sourceMappingURL=style.css.map */
+
+@import "_content.scss";

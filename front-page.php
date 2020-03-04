@@ -11,14 +11,34 @@
  *
  * @package underscores
  */
+// The Query
 
+        //Utiliser ca pour afficher la description : term_description( $category );
+        $args = array(
+            "category_name" => "conference",
+            "posts_per_page"=> 5,
+            "orderby"=>'date',
+            'order' => 'ASC'
+        );
+
+        $query1 = new WP_Query( $args );
+
+
+        /* The 2nd Query (without global var) */
+        $args2 = array(
+            "category_name" => "nouvelle",
+            'posts_per_page' => 4
+        );
+        $query2 = new WP_Query( $args2 );
+
+       
 get_header();
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-        FrontYeet
 		<?php
+        
 		while ( have_posts() ) :
 			the_post();
 
@@ -32,23 +52,14 @@ get_header();
 		endwhile; // End of the loop.
 
 
-        // The Query
-
-        //Utiliser ca pour afficher la description : term_description( $category );
-        $args = array(
-            "category_name" => "nouvelle",
-            'posts_per_page' => 3,
-            'orderBy' => 'date',
-            'order' => 'ASC'
-        );
-
-        $query1 = new WP_Query( $args );
+        
         
         // The Loop
         while ( $query1->have_posts() ) {
             $query1->the_post();
+            echo get_the_post_thumbnail('thumbnail');
             echo '<h4>' . get_the_title() . '</h4>';
-            echo '<p>'.get_the_excerpt() .'</p>';
+            echo '<p>'.substr(get_the_excerpt(),0,200) .'</p>';
         }
         
         /* Restore original Post Data 
@@ -60,19 +71,14 @@ get_header();
         wp_reset_postdata();
         
         
-        /* The 2nd Query (without global var) */
-        $args2 = array(
-            "category_name" => "évènement",
-        );
-        $query2 = new WP_Query( $args2 );
-        
         // // The 2nd Loop
         while ( $query2->have_posts() ) {
-            $query2->the_post();
-            echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
-            echo '<p>'.get_the_excerpt() .'</p>';
-            echo get_the_post_thumbnail($post, "thumbnail");
-        }
+        $query2->the_post();
+        echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
+        echo '<p>'.get_the_excerpt() .'</p>';
+        echo get_the_post_thumbnail($post, "thumbnail");
+    }
+
         
         // // Restore original Post Data
         wp_reset_postdata();
