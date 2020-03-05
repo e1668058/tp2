@@ -20,7 +20,6 @@
             "orderby"=>'date',
             'order' => 'ASC'
         );
-
         $query1 = new WP_Query( $args );
 
 
@@ -31,6 +30,13 @@
         );
         $query2 = new WP_Query( $args2 );
 
+        $args3 = array(
+            "category_name" => "evenements",
+            'posts_per_page' => 10,
+            "orderby"=>'date',
+            'order' => 'DESC'
+        );
+        $query3 = new WP_Query( $args3 );
        
 get_header();
 ?>
@@ -108,6 +114,29 @@ get_header();
         wp_reset_postdata();
         
         ?>
+
+        
+        </div>
+
+        <h1>Nos événements importants cette année</h1>
+        <div class="content-eve">
+        
+        <?php
+        // // The 2nd Loop
+        while ( $query3->have_posts() ) {
+        $query3->the_post();
+        echo '<div class="eve">';
+        //pour avoir le lien quand tu click le titre
+        $linkEve = get_permalink($query3->post->ID);
+        echo '<h4><a href='.$linkEve.'>' . get_the_title( $query3->post->ID ) .  ' - </a> '.get_the_date().' </h4>';
+        // echo '<p>'.get_the_excerpt() .'</p>';
+        echo '</div>';
+        }
+
+        // // Restore original Post Data
+        wp_reset_postdata();
+        
+        ?>   
         </div>
 
 		</main><!-- #main -->

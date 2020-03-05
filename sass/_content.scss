@@ -61,3 +61,48 @@
         }
     }
 }
+
+.content-eve {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 5fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    padding: 100px;
+
+    .eve {
+        border: 1px solid grey;
+    }
+
+    // eve est une abbreviation pour evenement
+    .eve:nth-child(1) {
+        grid-area: 1/2/2/3;
+    }
+    .eve:nth-child(2) {
+        grid-area: 3/2/4/3;
+    }
+    .eve:nth-child(3) {
+        grid-area: 4/2/5/3;
+    }
+    .eve::nth-child(4) {
+        grid-area: 5/3/6/4;
+    }
+    .eve::nth-child(5) {
+        grid-area: 6/3/7/4;
+    }
+    .eve::nth-child(6) {
+        grid-area: 7/3/8/4;
+    }
+    .eve::nth-child(7) {
+        grid-area: 8/3/9/4;
+    }
+    .eve::nth-child(8) {
+        grid-area: 9/3/10/4
+    }
+    .eve::nth-child(9) {
+        grid-area: 6/1/7/2;
+    }
+    .eve::nth-child(10) {
+        grid-area: 12/1/13/2;
+    }
+}
