@@ -74,7 +74,7 @@ get_header();
             //pour avoir le lien quand tu click le titre
             $link = get_permalink();
             $title = get_the_title();
-            echo '<h4><a href='.$link.'>'.$title .' - ' .get_the_date() .  '</a></h4>';
+            echo '<h4><a href='.$link.'>'.$title .' - ' .get_the_date('d/m/Y') .  '</a></h4>';
             echo '<p>'.substr(get_the_excerpt(),0,200) .'</p>';
             echo '</div>';
             echo '</div>';
@@ -118,26 +118,26 @@ get_header();
         
         </div>
 
-        <h1>Nos événements importants cette année</h1>
-        <div class="content-eve">
+        <!-- <h1>Nos événements importants cette année</h1> -->
+        <!-- <div class="content-eve"> -->
         
         <?php
         // // The 2nd Loop
-        while ( $query3->have_posts() ) {
-        $query3->the_post();
-        echo '<div class="eve">';
+        // while ( $query3->have_posts() ) {
+        // $query3->the_post();
+        // echo '<div class="eve">';
         //pour avoir le lien quand tu click le titre
-        $linkEve = get_permalink($query3->post->ID);
-        echo '<h4><a href='.$linkEve.'>' . get_the_title( $query3->post->ID ) .  ' - </a> '.get_the_date().' </h4>';
+        // $linkEve = get_permalink($query3->post->ID);
+        // echo '<h4><a href='.$linkEve.'>' . get_the_title( $query3->post->ID ) .  ' - </a> '.get_the_date().' </h4>';
         // echo '<p>'.get_the_excerpt() .'</p>';
-        echo '</div>';
-        }
+        // echo '</div>';
+        // }
 
         // // Restore original Post Data
-        wp_reset_postdata();
+        // wp_reset_postdata();
         
         ?>   
-        </div>
+        <!-- </div> -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

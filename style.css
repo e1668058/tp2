@@ -36,21 +36,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.conference .thumbnailConference {
-  width: 200px;
-  height: 200px;
 }
 
 .content-nouvelle {
@@ -61,12 +53,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .content-nouvelle .nouvelle {
@@ -100,99 +86,12 @@
   height: 200px;
 }
 
-.content-eve {
+.grille {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (5fr)[12];
-      grid-template-rows: repeat(12, 5fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 30px;
-  padding: 100px;
-}
-
-.content-eve .eve {
-  border: 1px solid grey;
-}
-
-.content-eve .eve:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 1/2/2/3;
-}
-
-.content-eve .eve:nth-child(2) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 3/2/4/3;
-}
-
-.content-eve .eve:nth-child(3) {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 4/2/5/3;
-}
-
-.content-eve .eve::nth-child(4) {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-area: 5/3/6/4;
-}
-
-.content-eve .eve::nth-child(5) {
-  -ms-grid-row: 6;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-area: 6/3/7/4;
-}
-
-.content-eve .eve::nth-child(6) {
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-area: 7/3/8/4;
-}
-
-.content-eve .eve::nth-child(7) {
-  -ms-grid-row: 8;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-area: 8/3/9/4;
-}
-
-.content-eve .eve::nth-child(8) {
-  -ms-grid-row: 9;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-area: 9/3/10/4;
-}
-
-.content-eve .eve::nth-child(9) {
-  -ms-grid-row: 6;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 6/1/7/2;
-}
-
-.content-eve .eve::nth-child(10) {
-  -ms-grid-row: 12;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 12/1/13/2;
+  -ms-grid-columns: (2fr)[3];
+      grid-template-columns: repeat(3, 2fr);
+  -ms-grid-rows: (2fr)[12];
+      grid-template-rows: repeat(12, 2fr);
 }
 /*# sourceMappingURL=style.css.map */
