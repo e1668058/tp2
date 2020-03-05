@@ -65,7 +65,10 @@ get_header();
             echo get_the_post_thumbnail('thumbnail');
             echo '</div>';
             echo '<div class="infoConference">';
-            echo '<h4>' . get_the_title() .' - ' .get_the_date() .  '</h4>';
+            //pour avoir le lien quand tu click le titre
+            $link = get_permalink();
+            $title = get_the_title();
+            echo '<h4><a href='.$link.'>'.$title .' - ' .get_the_date() .  '</a></h4>';
             echo '<p>'.substr(get_the_excerpt(),0,200) .'</p>';
             echo '</div>';
             echo '</div>';
@@ -89,7 +92,9 @@ get_header();
         $query2->the_post();
         echo '<div class="nouvelle">';
         echo '<div class="containNews">';
-        echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
+        //pour avoir le lien quand tu click le titre
+        $linkNouvelle = get_permalink($query2->post->ID);
+        echo '<h3><a href='.$linkNouvelle.'>' . get_the_title( $query2->post->ID ) . '</a></h3>';
         // echo '<p>'.get_the_excerpt() .'</p>';
         echo '<div class="thumbnailNouvelle">';
         echo get_the_post_thumbnail($post, "thumbnail");
