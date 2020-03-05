@@ -52,16 +52,23 @@ get_header();
 			// endif;
 
 		endwhile; // End of the loop.
+        ?>
 
-
+        <div class="content-conference">
         
-        
-        // The Loop
+        <?php
+        //Pour les conferences
         while ( $query1->have_posts() ) {
             $query1->the_post();
+            echo '<div class="conference">';
+            echo '<div class="thumbnailConference">';
             echo get_the_post_thumbnail('thumbnail');
-            echo '<h4>' . get_the_title() .' - ' .get_the_date().  '</h4>';
+            echo '</div>';
+            echo '<div class="infoConference">';
+            echo '<h4>' . get_the_title() .' - ' .get_the_date() .  '</h4>';
             echo '<p>'.substr(get_the_excerpt(),0,200) .'</p>';
+            echo '</div>';
+            echo '</div>';
         }
         
         /* Restore original Post Data 
@@ -71,22 +78,25 @@ get_header();
         * wp_reset_postdata().
         */
         wp_reset_postdata();
+        ?>
+        </div>
         
-        
+        <div class="content-nouvelle">
+        <?php
         // // The 2nd Loop
         while ( $query2->have_posts() ) {
         $query2->the_post();
         echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
         // echo '<p>'.get_the_excerpt() .'</p>';
         echo get_the_post_thumbnail($post, "thumbnail");
-    }
+        }
 
         
         // // Restore original Post Data
         wp_reset_postdata();
         
         ?>
-
+        </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

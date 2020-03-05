@@ -7,3 +7,15 @@
 .entry-footer {
     display: none;
 }
+
+.conference {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .thumbnailConference {
+        width: 200px;
+        height: 200px;
+    }
+}
