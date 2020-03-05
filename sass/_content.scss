@@ -19,3 +19,28 @@
         height: 200px;
     }
 }
+
+.content-nouvelle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .nouvelle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+    
+        .containNews {
+            display: flex;
+            flex-direction: column;
+            
+            .thumbnailNouvelle {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}

@@ -55,7 +55,7 @@ get_header();
         ?>
 
         <div class="content-conference">
-        
+        <h1>Nos dernières conférences</h1>
         <?php
         //Pour les conferences
         while ( $query1->have_posts() ) {
@@ -80,15 +80,22 @@ get_header();
         wp_reset_postdata();
         ?>
         </div>
-        
+        <h1>Voici les dernières nouvelles</h1>
         <div class="content-nouvelle">
+        
         <?php
         // // The 2nd Loop
         while ( $query2->have_posts() ) {
         $query2->the_post();
+        echo '<div class="nouvelle">';
+        echo '<div class="containNews">';
         echo '<h3>' . get_the_title( $query2->post->ID ) . '</h3>';
         // echo '<p>'.get_the_excerpt() .'</p>';
+        echo '<div class="thumbnailNouvelle">';
         echo get_the_post_thumbnail($post, "thumbnail");
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
         }
 
         
