@@ -68,7 +68,7 @@ get_header();
             $query1->the_post();
             echo '<div class="conference">';
             echo '<div class="thumbnailConference">';
-            echo get_the_post_thumbnail('thumbnail');
+            echo get_the_post_thumbnail($post, 'thumbnail');
             echo '</div>';
             echo '<div class="infoConference">';
             //pour avoir le lien quand tu click le titre
