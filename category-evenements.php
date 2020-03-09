@@ -29,8 +29,7 @@ get_header();
                $jour = get_the_date('j');
                $mois = (int)get_the_date('m');
                $gridArea = $jour. '/' . ($mois%3+1) . '/' . ($jour+1) . '/' . (($mois%3+1)+1);
-               
-               echo '<h3 style=grid-area:'.$gridArea.' >' . get_the_title() . ' ' .  get_the_date('j m y') . '</h3>';
+               echo '<h3 style=grid-area:'.$gridArea.'; ><a href='.get_permalink(). '>' . get_the_title() . ' ' .  get_the_date('j m y') . '</a></h3>';
                
              }
 
