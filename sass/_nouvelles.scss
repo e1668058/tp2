@@ -1,0 +1,26 @@
+.entry-header {
+    display: flex;
+    flex-direction: column;
+    
+    .entry-content {
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+.post-thumbnail {
+    width: 200px;
+    img {
+        // width: 30%;
+        height: 200px;
+    }
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
