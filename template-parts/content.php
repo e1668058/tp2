@@ -13,6 +13,7 @@
 	<?php underscores_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php
+		$i = 0;
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
@@ -26,6 +27,7 @@
 
 			<div class="entry-content">
 			<?php
+			$i++;
 			// the_content( sprintf(
 			// 	wp_kses(
 			// 		/* translators: %s: Name of current post. Only visible to screen readers */
@@ -44,7 +46,8 @@
 				'after'  => '</div>',
 			) );
 			?>
-			<button class="bn">Lire la suite...</button>
+			<button id="<?php the_ID(); ?>" class="bn">Lire la suite...</button>
+			<p class="cont" id="<?php the_ID(); ?>1"></p>
 			</div><!-- .entry-content -->
 
 	</header><!-- .entry-header -->

@@ -8,7 +8,7 @@ function my_theme_enqueue_styles() {
 // }
 
 function main_js() {
-    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/main.js', array ());
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', null, 1.1, true);
 }
 add_action('wp_enqueue_scripts', 'main_js');
 
@@ -16,6 +16,7 @@ add_action('wp_enqueue_scripts', 'main_js');
 /* Permet d'adapter la requête principale avant qu'elle ne s'exécute */ 
 function extraire_evenement( $query ) {
 
+    //!is_front_page() && $query->is_category('evenements)
     if (!is_home() && $query->is_category('evenements'))
     {
        $query->set( 'posts_per_page', -1 );
