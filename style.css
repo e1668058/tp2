@@ -15,12 +15,12 @@
   font-size: 3em;
 }
 
-.site-branding {
+#primary-menu ul {
   display: none;
 }
 
-#primary-menu ul {
-  display: none;
+.bn {
+  background-color: greenyellow;
 }
 
 .entry-footer {
