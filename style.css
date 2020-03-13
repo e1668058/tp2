@@ -23,13 +23,17 @@
   background-color: greenyellow;
 }
 
-.entry-footer {
+.entry-footer, .site-description {
   display: none;
+}
+
+.post-thumbnail {
+  width: 100%;
 }
 
 .post-thumbnail img {
   width: 100%;
-  height: 600px;
+  height: 550px;
 }
 
 .conference {
@@ -107,14 +111,6 @@
 
 .entry-header .entry-content p {
   font-size: 18px;
-}
-
-.post-thumbnail {
-  width: 200px;
-}
-
-.post-thumbnail img {
-  height: 200px;
 }
 
 article {

@@ -34,7 +34,22 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Accueil</a></p>
+				<!-- Le menu -->
+				<nav id='menu'>
+					<input id="checkMenu" type="checkbox">
+					<label id="btnMenu" for="checkMenu">&#9776;</label>
+					<ul  id='bar' class='global'>
+						<li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Accueil</a></li>
+						<li><a href="http://localhost/allen_veille2/category/nouvelle/" rel="nouvelle">Nouvelles</a></li>
+						<li><a href="http://localhost/allen_veille2/category/evenement/" rel="evenement">Événements</a></li>
+					</ul>
+					<div id='recherche' class='global'>
+						<input id="chkRecherche" type="checkbox">
+						<input type='text' id='txtRecherche' placeholder='Recherche'> 
+						<label id="btnRecherche" for="chkRecherche"></label>
+					</div>
+				</nav>
+
 				<?php
 			endif;
 			$underscores_description = get_bloginfo( 'description', 'display' );

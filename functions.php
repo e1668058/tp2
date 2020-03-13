@@ -17,7 +17,7 @@ add_action('wp_enqueue_scripts', 'main_js');
 function extraire_evenement( $query ) {
 
     //!is_front_page() && $query->is_category('evenements)
-    if (!is_home() && $query->is_category('evenements'))
+    if (!is_front_page() && $query->is_category('evenement'))
     {
        $query->set( 'posts_per_page', -1 );
        $query->set( 'orderby', 'date' );
